@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+.inclusive-sans {
+  font-family: "Inclusive Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 24;
+    vertical-align: middle;
+}
+
+* { box-sizing: border-box; }
+html, body {
+    margin: 0;
+    font-family: "Inclusive Sans", sans-serif, system-ui, -apple-system;
+}
+
+main { padding: 16px; }
+
+
+
+.controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+input[type="number"] { width: 100px; }
+
+
+.hidden {
+    display: none;
+}
+.invisible {
+    visibility: hidden;
+}
+
+$screen_m: 720px;
+$screen_t: 920px; /* tablet */
+$screen_d: 1200px; /* desktop */
+
+
+.mobileonly {
+    @media (min-width: $screen_m) {
+        display: none;
+    }
+}
+.tabletonly {
+    @media (max-width: ($screen_m - 1)) {
+        display: none;
+    }
+    @media (min-width: $screen_d) {
+        display: none;
+    }
+}
+.desktoponly {
+    @media (max-width: ($screen_d - 1)) {
+        display: none;
+    }
+}
+.mobilenot {
+    @media (max-width: ($screen_m - 1)) {
+        display: none;
+    }
+}
+.tabletnot {
+    @media (min-width: $screen_t) {
+        display: none;
+    }
+}
+.desktopnot {
+    @media (min-width: $screen_d) {
+        display: none;
+    }
+}
+.colorwhite{
+    color: white;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.textcenter {
+    text-align: center;
+}
+.textleft{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+
+@for $i from 8 through 26 {
+    .p#{$i} {
+        font-size: #{$i}px;
+    }
+}
+.bold {
+    font-weight: bold
+}
+.block { display: block; }
+.inlineblock { display: inline-block; }
+.flex { display: flex; flex-wrap: wrap;}
+@for $i from 1 through 10 {
+    $size: $i*10;
+    $pixelsize: $i*100;
+    .vw#{$size} {
+        width: #{$size}vw;
+    }
+    .px#{$pixelsize} {
+        width: #{$pixelsize}px;
+    }
+    .percent#{$size} {
+        width: #{$size + '%'};
+    }
+    .percentv#{$size} {
+        height: #{$size + '%'};
+    }
+    .maxpx#{$pixelsize} {
+        max-width: #{$pixelsize}px;
+    }
+    .maxpercent#{$size} {
+        max-width: #{$size + '%'};
+    }
+}
+
+@for $i from 3 through 10 {
+    $size: $i*10;
+    $pixelsize: $i*100;
+    .desktopvw#{$size} {
+        @media (min-width: $screen_m) {
+            width: #{$size}vw;
+        }
+    }
+    .desktoppx#{$pixelsize} {
+        @media (min-width: $screen_m) {
+            width: #{$pixelsize}px;
+        }
+    }
+}
+@for $i from 1 through 10 {
+    .lineheight#{$i} {
+        line-height: #{$i}em;
+    }
+    .lineheightpx#{$i*10} {
+        line-height: #{$i*10}px;
+    }
+    .marginvpx#{$i} {
+        margin-top: #{$i}px;
+        margin-bottom: #{$i}px;
+    }
+    .paddingv#{$i} {
+        padding-top: #{$i}em;
+        padding-bottom: #{$i}em;
+    }
+    .paddingh#{$i} {
+        padding-left: #{$i}em;
+        padding-right: #{$i}em;
+    }
+    .marginhpx#{$i} {
+        margin-left: #{$i}px;
+        margin-right: #{$i}px;
+    }
+    .marginvpx#{$i*10} {
+        margin-top: #{$i*10}px;
+        margin-bottom: #{$i*10}px;
+    }
+    .marginhpx#{$i*10} {
+        margin-left: #{$i*10}px;
+        margin-right: #{$i*10}px;
+    }
+}

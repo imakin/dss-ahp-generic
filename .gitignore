@@ -1,0 +1,54 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local env files
+*.local
+.env
+.env.*
+!.env.example
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS / cache
+Thumbs.db
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Vite/SvelteKit caches (if any)
+.svelte-kit/
+
+# Optional: lock files you don't use
+# yarn.lock
+# pnpm-lock.yaml
+
+# Compiled styles (you use only SCSS/LESS/Sass as sources)
+*.css
+*.css.map
+.sass-cache/
+.less-cache/
+
+*.css
+*.css.map
