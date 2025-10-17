@@ -194,58 +194,107 @@ body {
     font-size: 18px;
 }
 .sidebar {
-    border: solid 10px color.$gray;
-    padding: 1em;
-    padding-right: 0;
+    background: linear-gradient(180deg, color.$gray-darker 0%, color.$gray-dark 100%);
+    padding: 24px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    
     h1 {
-        font-size: 1.5em;
-        margin: 0 0 12px;
+        font-size: 1.4em;
+        font-weight: 700;
+        margin: 0 0 32px;
+        color: white;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+    
     ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
+    
     button {
-        font-size: 18px;
+        font-size: 15px;
         width: 100%;
         text-align: left;
-        padding: 1.2em 10px;
+        padding: 16px 20px;
         background: transparent;
         border: none;
-        border-left: solid 8px transparent;
+        border-radius: 8px;
         cursor: pointer;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        transition: all 0.2s ease;
+        position: relative;
+        
         &:hover {
-            background: color.$gray;
-        }
-    }
-    li {
-        margin: 6px 0;
-        &.selected button {
-            border-left: solid 8px color.$blue;
-            background-color: color.$gray;
-        }
-    }
-    @media screen and (max-width: 600px) {
-        padding-left: 0px;
-        button {
-            font-size: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: translateX(4px);
         }
         
+        &:active {
+            transform: translateX(2px);
+        }
+    }
+    
+    li {
+        margin: 4px 0;
+        
+        &.selected button {
+            background: linear-gradient(135deg, color.$primary, color.$primary-dark);
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            transform: translateX(4px);
+            
+            &::before {
+                content: '';
+                position: absolute;
+                left: -24px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 100%;
+                background: color.$primary;
+                border-radius: 0 2px 2px 0;
+            }
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        padding: 16px;
+        
+        h1 {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            font-size: 14px;
+            padding: 12px 16px;
+        }
     }
 }
 
 .layout {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 280px 1fr;
     min-height: 100vh;
-    @media screen and (max-width: 600px) {
+    
+    @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
+        
+        .sidebar {
+            display: none; // Hide sidebar on mobile, could implement mobile menu later
+        }
     }
 }
+
 main {
-    border: solid 10px color.$gray;
-    border-left: none;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow-x: auto;
 }
 
 </style>

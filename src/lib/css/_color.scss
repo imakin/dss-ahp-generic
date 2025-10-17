@@ -1,10 +1,33 @@
-$gray: #eaeef0;
-$gray-dark: #1f6dba;
-$red: #f59d9d;
-$blue: #549BDD;
+// Modern color palette
+$gray: #f8fafc;
+$gray-light: #e2e8f0;
+$gray-medium: #cbd5e1;
+$gray-dark: #334155;
+$gray-darker: #1e293b;
 
+$primary: #3b82f6;
+$primary-light: #dbeafe;
+$primary-dark: #1d4ed8;
+
+$secondary: #8b5cf6;
+$secondary-light: #f3e8ff;
+
+$success: #10b981;
+$success-light: #d1fae5;
+
+$warning: #f59e0b;
+$warning-light: #fef3c7;
+
+$danger: #ef4444;
+$danger-light: #fee2e2;
+
+$info: #06b6d4;
+$info-light: #cffafe;
+
+// Background classes
 .bgdark {
-    background-color: $gray-dark;
+    background-color: $gray-darker;
+    color: white;
 }
 .bglight {
     background-color: $gray;
@@ -12,3 +35,36 @@ $blue: #549BDD;
 .bgwhite {
     background-color: white;
 }
+.bg-primary {
+    background-color: $primary;
+    color: white;
+}
+.bg-primary-light {
+    background-color: $primary-light;
+    color: $primary-dark;
+}
+.bg-secondary {
+    background-color: $secondary;
+    color: white;
+}
+.bg-success {
+    background-color: $success;
+    color: white;
+}
+.bg-warning {
+    background-color: $warning;
+    color: white;
+}
+.bg-danger {
+    background-color: $danger;
+    color: white;
+}
+
+// Text colors
+.text-primary { color: $primary; }
+.text-secondary { color: $secondary; }
+.text-success { color: $success; }
+.text-warning { color: $warning; }
+.text-danger { color: $danger; }
+.text-gray { color: $gray-dark; }
+.text-gray-light { color: $gray-medium; }
